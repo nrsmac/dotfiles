@@ -1,3 +1,37 @@
+" Colemak remap:
+"
+" noremap d g
+" noremap e k
+" noremap f e
+" noremap g t
+" noremap i l
+" noremap j y
+" noremap k n
+" noremap l u
+" noremap n j
+" noremap o p
+" noremap p r
+" noremap r s
+" noremap s d
+" noremap t f
+" noremap u i
+" noremap y o
+" noremap D G
+" noremap E K
+" noremap F E
+" noremap G T
+" noremap I L
+" noremap J Y
+" noremap K N
+" noremap L U
+" noremap N J
+" noremap O P
+" noremap P R
+" noremap R S
+" noremap S D
+" noremap T F
+" noremap U I
+" noremap Y O
 set nocompatible              " required
 filetype off                  " required
 
@@ -38,23 +72,13 @@ set foldlevel=99
 nnoremap <space> za
 
 " PEP-8 
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
-
-" Fullstack aus
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
-
-" uneccesary whitespace highlighting
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufNewFile,BufRead *.py set tabstop=4
+au BufNewFile,BufRead *.py set softtabstop=4
+au BufNewFile,BufRead *.py set shiftwidth=4
+au BufNewFile,BufRead *.py set textwidth=79
+au BufNewFile,BufRead *.py set expandtab
+au BufNewFile,BufRead *.py set autoindent
+au BufNewFile,BufRead *.py set fileformat=unix
 
 
 " pretty highlighting
