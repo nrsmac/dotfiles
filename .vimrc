@@ -115,6 +115,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'davidhalter/jedi-vim'
 Plugin 'sainnhe/everforest'
+Plugin 'ekalinin/Dockerfile.vim'
 
 " everforest!!
 if has('termguicolors')
@@ -133,5 +134,20 @@ let g:everforest_background = 'soft'
 " For better performance
 let g:everforest_better_performance = 1
 
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 colorscheme everforest
+
+" TMUX FIXES
+" fix paste indentation
+if &term =~ "screen"                                                   
+  let &t_BE = "\e[?2004h"                                              
+  let &t_BD = "\e[?2004l"                                              
+  exec "set t_PS=\e[200~"                                              
+  exec "set t_PE=\e[201~"                                              
+endif
+
+" YAML indentation
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 

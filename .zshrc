@@ -39,6 +39,7 @@ ZSH_THEME="bira"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
+export TERM="screen-256color"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -103,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # Created by `pipx` on 2024-01-02 16:30:38
 export PATH="$PATH:/home/g74832/.local/bin"
 alias config='/usr/bin/git --git-dir=/home/g74832/.cfg/ --work-tree=/home/g74832'
-alias ls="ls -la"
+# alias ls="ls -la"
 alias dcu="docker compose up"
 alias dcub="docker compose up --build"
 alias dcd="docker compose down"
