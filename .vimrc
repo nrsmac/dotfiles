@@ -151,3 +151,7 @@ endif
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
+"NERDTree Hidden Files
+let NERDTreeShowHidden=1
+"NERDTree auto-open
+"au VimEnter *  NERDTree
