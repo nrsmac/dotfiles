@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Created by `pipx` on 2024-01-02 16:30:38
 export PATH="$PATH:/home/g74832/.local/bin"
-alias config='/usr/bin/git --git-dir=/home/g74832/.cfg/ --work-tree=/home/g74832'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # alias ls="ls -la"
 alias dcu="docker compose up"
 alias dcub="docker compose up --build"
