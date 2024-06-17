@@ -116,6 +116,7 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'davidhalter/jedi-vim'
 Plugin 'sainnhe/everforest'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 " everforest!!
 if has('termguicolors')
