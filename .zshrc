@@ -117,3 +117,11 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+if [[ $(uname) == "Darwin" ]]; then
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [[ $(uname) == "Linux" ]]; then
+    source /home/nrsmac/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+    echo "Unsupported operating system"
+fi
