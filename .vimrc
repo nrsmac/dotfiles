@@ -117,6 +117,8 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'sainnhe/everforest'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plugin 'wellle/context.vim'
+let g:context_enabled = 1
 
 " everforest!!
 if has('termguicolors')
