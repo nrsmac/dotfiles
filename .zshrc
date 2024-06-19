@@ -106,5 +106,10 @@ alias dcu="docker compose up"
 alias dcub="docker compose up --build"
 alias dcd="docker compose down"
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/nrsmac/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ $(uname) == "Darwin" ]]; then
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [[ $(uname) == "Linux" ]]; then
+    source /home/nrsmac/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+    echo "Unsupported operating system"
+fi
