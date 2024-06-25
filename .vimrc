@@ -117,8 +117,20 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'sainnhe/everforest'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-Plugin 'wellle/context.vim'
-let g:context_enabled = 1
+let g:pymode_syntax_all = 1
+let g:pymode_rope = 1
+let g:pymode_rope_completion = 1
+" Use the Python formatters from the current virtual environment
+let g:pymode_lint_on_fly=0 
+let g:pymode_lint_checkers = ['pylint', 'pre-commit', 'flake8', 'black', 'radon', 'flake8-docstrings', 'Flake8-pyproject']
+let g:pymode_options_max_line_length = 119
+setlocal textwidth=119
+
+" Automatically format on save
+" augroup fmt
+"   autocmd!
+"   autocmd BufWritePre *.py Autoformat
+" augroup END
 
 " everforest!!
 if has('termguicolors')
@@ -132,7 +144,7 @@ set background=dark
 " Set contrast.
 " This configuration option should be placed before `colorscheme everforest`.
 " Available values: 'hard', 'medium'(default), 'soft'
-let g:everforest_background = 'soft'
+let g:everforest_background = 'hard'
 
 " For better performance
 let g:everforest_better_performance = 1
