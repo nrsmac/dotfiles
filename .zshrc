@@ -126,3 +126,25 @@ elif [[ $(uname) == "Linux" ]]; then
 else
     echo "Unsupported operating system"
 fi
+
+# Auto-activate Python virtual environment
+auto_activate_venv() {
+    # Check if we're already in a venv, deactivate if so
+    if [ -n "$VIRTUAL_ENV" ]; then
+        source deactivate
+    fi
+
+    # Look for a virtual environment in the current directory
+    if [ -d "./venv" ]; then
+        echo "Activating virtual environment in ./venv"
+        source "./venv/bin/activate"
+    fi
+}
+
+# Attach the auto-activation to the `cd` command
+cd() {
+    builtin cd "$@" && auto_activate_venv
+}
+
+# Call auto_activate_venv manually to cover starting in a directory with a venv
+auto_activate_venv
