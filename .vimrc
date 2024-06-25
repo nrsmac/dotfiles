@@ -105,7 +105,6 @@ let g:SimpylFold_docstring_preview=1
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
-Plugin 'nordtheme/vim'
 Plugin 'jnurmine/Zenburn'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'scrooloose/nerdtree'
@@ -114,7 +113,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'davidhalter/jedi-vim'
-Plugin 'sainnhe/everforest'
+Plugin 'catppuccin/vim', { 'as': 'catppuccin' }
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 let g:pymode_syntax_all = 1
@@ -126,32 +127,55 @@ let g:pymode_lint_checkers = ['pylint', 'pre-commit', 'flake8', 'black', 'radon'
 let g:pymode_options_max_line_length = 119
 setlocal textwidth=119
 
+" Airline Customizations
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.colnr = ' ㏇:'
+let g:airline_symbols.colnr = ' ℅:'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.linenr = ' ␊:'
+let g:airline_symbols.linenr = ' ␤:'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.maxlinenr = '㏑'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = 'Ɇ'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.colnr = ' ℅:'
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ' :'
+let g:airline_symbols.maxlinenr = '☰ '
+let g:airline_symbols.dirty='⚡'
+
+
 " Automatically format on save
 " augroup fmt
 "   autocmd!
 "   autocmd BufWritePre *.py Autoformat
 " augroup END
 
-" everforest!!
-if has('termguicolors')
-  set termguicolors
-endif
-
-" For dark version.
-set background=dark
-
-
-" Set contrast.
-" This configuration option should be placed before `colorscheme everforest`.
-" Available values: 'hard', 'medium'(default), 'soft'
-let g:everforest_background = 'hard'
-
-" For better performance
-let g:everforest_better_performance = 1
-
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-colorscheme everforest
 
 " TMUX FIXES
 " fix paste indentation
