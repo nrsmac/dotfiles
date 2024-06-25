@@ -121,10 +121,12 @@ Plugin 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 let g:pymode_syntax_all = 1
 let g:pymode_rope = 1
 let g:pymode_rope_completion = 1
+let g:pymode_rope_autoimport_import_after_complete = 1
 " Use the Python formatters from the current virtual environment
 let g:pymode_lint_on_fly=0 
 let g:pymode_lint_checkers = ['pylint', 'pre-commit', 'flake8', 'black', 'radon', 'flake8-docstrings', 'Flake8-pyproject']
 let g:pymode_options_max_line_length = 119
+let g:pymode_rope_autoimport = 1
 setlocal textwidth=119
 
 " Airline Customizations

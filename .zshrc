@@ -84,10 +84,6 @@ alias dcu="docker compose up"
 alias dcub="docker compose up --build"
 alias dcd="docker compose down"
 
-# Shell integrations
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
-
 # Auto-activate Python virtual environment
 auto_activate_venv() {
     # Check if we're already in a venv, deactivate if so
@@ -110,3 +106,5 @@ cd() {
 # Call auto_activate_venv manually to cover starting in a directory with a venv
 auto_activate_venv
 
+# Shell integrations
+#eval "$(zoxide init --cmd cd zsh)"
