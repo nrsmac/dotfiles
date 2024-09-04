@@ -1,3 +1,44 @@
+# Fix arrowkeys
+case "${TERM}" in
+  cons25*|linux) # plain BSD/Linux console
+    bindkey '\e[H'    beginning-of-line   # home 
+    bindkey '\e[F'    end-of-line         # end  
+    bindkey '\e[5~'   delete-char         # delete
+    bindkey '[D'      emacs-backward-word # esc left
+    bindkey '[C'      emacs-forward-word  # esc right
+    ;;
+  *rxvt*) # rxvt derivatives
+    bindkey '\e[3~'   delete-char         # delete
+    bindkey '\eOc'    forward-word        # ctrl right
+    bindkey '\eOd'    backward-word       # ctrl left
+    # workaround for screen + urxvt
+    bindkey '\e[7~'   beginning-of-line   # home
+    bindkey '\e[8~'   end-of-line         # end
+    bindkey '^[[1~'   beginning-of-line   # home
+    bindkey '^[[4~'   end-of-line         # end
+    ;;
+  *xterm*) # xterm derivatives
+    bindkey '\e[H'    beginning-of-line   # home
+    bindkey '\e[F'    end-of-line         # end
+    bindkey '\e[3~'   delete-char         # delete
+    bindkey '\e[1;5C' forward-word        # ctrl right
+    bindkey '\e[1;5D' backward-word       # ctrl left
+    # workaround for screen + xterm
+    bindkey '\e[1~'   beginning-of-line   # home
+    bindkey '\e[4~'   end-of-line         # end
+    ;;
+  screen)
+    bindkey '^[[1~'   beginning-of-line   # home
+    bindkey '^[[4~'   end-of-line         # end
+    bindkey '\e[3~'   delete-char         # delete
+    bindkey '\eOc'    forward-word        # ctrl right
+    bindkey '\eOd'    backward-word       # ctrl left
+    bindkey '^[[1;5C' forward-word        # ctrl right
+    bindkey '^[[1;5D' backward-word       # ctrl left
+    ;;
+esac
+
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -89,26 +130,26 @@ alias dcub="docker compose up --build"
 alias dcd="docker compose down"
 
 # Auto-activate Python virtual environment
-auto_activate_venv() {
-    # Check if we're already in a venv, deactivate if so
-    if [ -n "$VIRTUAL_ENV" ]; then
-        source deactivate
-    fi
-
-    # Look for a virtual environment in the current directory
-    if [ -d "./venv" ]; then
-        echo "Activating virtual environment in ./venv"
-        source "./venv/bin/activate"
-    fi
-}
+# auto_activate_venv() {
+#     # Check if we're already in a venv, deactivate if so
+#     if [ -n "$VIRTUAL_ENV" ]; then
+#         source deactivate
+#     fi
+# 
+#     # Look for a virtual environment in the current directory
+#     if [ -d "./venv" ]; then
+#         echo "Activating virtual environment in ./venv"
+#         source "./venv/bin/activate"
+#     fi
+# }
 
 # Attach the auto-activation to the `cd` command
-cd() {
-    builtin cd "$@" && auto_activate_venv
-}
+# cd() {
+#     builtin cd "$@" && auto_activate_venv
+# }
 
 # Call auto_activate_venv manually to cover starting in a directory with a venv
-auto_activate_venv
+# auto_activate_venv
 
 # Shell integrations
 #eval "$(zoxide init --cmd cd zsh)"
