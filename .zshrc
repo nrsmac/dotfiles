@@ -128,10 +128,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias dcu="docker compose up"
 alias dcub="docker compose up --build"
 alias dcd="docker compose down"
-
-# Auto-activate Python virtual environment
-# auto_activate_venv() {
-#     # Check if we're already in a venv, deactivate if so
 #     if [ -n "$VIRTUAL_ENV" ]; then
 #         source deactivate
 #     fi
