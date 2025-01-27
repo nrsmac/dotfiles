@@ -196,3 +196,6 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 let NERDTreeShowHidden=1
 "NERDTree auto-open
 "au VimEnter *  NERDTree
+" Standard indentation:
+set softtabstop=4              " see :h 'softtabstop'
+set shiftwidth=4               " see :h 'shiftwidth'
