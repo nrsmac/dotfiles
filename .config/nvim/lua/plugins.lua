@@ -13,6 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    -- LSP manager
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
@@ -21,7 +22,6 @@ require("lazy").setup({
 			lspconfig.pylsp.setup({})
 		end,
 	},
-    -- LSP manager
 	{ "mason-org/mason.nvim", opts = {} },
     {
         "mason-org/mason-lspconfig.nvim",
@@ -115,5 +115,5 @@ require("lazy").setup({
             signature = { enabled = true },
         },
         opts_extend = { "sources.default" },
-    }
+    },
 })

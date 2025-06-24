@@ -1,9 +1,9 @@
 -- Remove Global Default Key mapping
-vim.keymap.del("n", "grn")
-vim.keymap.del("n", "gra")
-vim.keymap.del("n", "grr")
-vim.keymap.del("n", "gri")
-vim.keymap.del("n", "gO")
+-- vim.keymap.del("n", "grn")
+-- vim.keymap.del("n", "gra")
+-- vim.keymap.del("n", "grr")
+-- vim.keymap.del("n", "gri")
+-- vim.keymap.del("n", "gO")
 
 -- Create keymapping
 -- LspAttach: After an LSP Client performs "initialize" and attaches to a buffer.
@@ -23,3 +23,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 })
 
+vim.lsp.config('ruff', {
+  init_options = {
+    settings = {
+      -- Ruff language server settings go here
+    }
+  }
+})
+
+vim.lsp.enable('ruff')
