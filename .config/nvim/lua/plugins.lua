@@ -22,6 +22,15 @@ require("lazy").setup({
 			lspconfig.pylsp.setup({})
 		end,
 	},
+    {
+        "NvChad/nvim-colorizer.lua",
+        opts = {
+            user_default_options = {
+                mode = "background",
+                names = false,
+            },
+        },
+    },
 	{ "mason-org/mason.nvim", opts = {} },
     {
         "mason-org/mason-lspconfig.nvim",
