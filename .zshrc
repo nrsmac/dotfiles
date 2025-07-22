@@ -119,6 +119,7 @@ alias ls='ls --color'
 alias c='clear'
 export PATH="$PATH:$HOME/.local/bin"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dc="docker compose"
 alias dcu="docker compose up"
 alias dcub="docker compose up --build"
 alias dcd="docker compose down"
