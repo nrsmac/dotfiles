@@ -122,6 +122,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias dcu="docker compose up"
 alias dcub="docker compose up --build"
 alias dcd="docker compose down"
+alias vim='nvim'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #     if [ -n "$VIRTUAL_ENV" ]; then
