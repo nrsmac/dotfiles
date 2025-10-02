@@ -1,3 +1,4 @@
+bindkey -v
 # Fix arrowkeys
 case "${TERM}" in
   cons25*|linux) # plain BSD/Linux console
@@ -124,6 +125,7 @@ alias dcu="docker compose up"
 alias dcub="docker compose up --build"
 alias dcd="docker compose down"
 alias vim='nvim'
+alias kctl='kubectl'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #     if [ -n "$VIRTUAL_ENV" ]; then
@@ -156,3 +158,10 @@ export NVM_DIR="$HOME/.nvm"
 
 export EDITOR=nvim
 eval $(thefuck --alias)
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+function iterm2\_print\_user\_vars() {
+  iterm2\_set\_user\_var gitProject $(basename $(git rev-parse --show-toplevel 2> /dev/null) 2> /dev/null)
+}
+
