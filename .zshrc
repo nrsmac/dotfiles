@@ -115,10 +115,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
 # Aliases
 alias ls='ls --color'
 alias c='clear'
-export PATH="$PATH:$HOME/.local/bin"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias dc="docker compose"
 alias dcu="docker compose up"
@@ -126,6 +126,8 @@ alias dcub="docker compose up --build"
 alias dcd="docker compose down"
 alias vim='nvim'
 alias kctl='kubectl'
+alias ddb='duckdb'
+alias tf='tofu'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #     if [ -n "$VIRTUAL_ENV" ]; then
@@ -150,7 +152,11 @@ alias kctl='kubectl'
 # Shell integrations
 #eval "$(zoxide init --cmd cd zsh)"
 #
+# PATH
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -165,3 +171,4 @@ function iterm2\_print\_user\_vars() {
   iterm2\_set\_user\_var gitProject $(basename $(git rev-parse --show-toplevel 2> /dev/null) 2> /dev/null)
 }
 
+export PATH='/Users/noah/.duckdb/cli/latest':$PATH
